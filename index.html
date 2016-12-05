@@ -32,27 +32,28 @@
            var location = results[0].geometry.location;
             
         map = new google.maps.Map(document.getElementById('map'),{
-          center: {lat: 35.462906, lng: 139.330869},
-          mapTypeId: google.maps.MapTypeId.HYBRID,
+          center: location,
+          //mapTypeId: google.maps.MapTypeId.HYBRID,
           zoom: 16
         });
         var marker = new google.maps.Marker({
-          position: {lat: 35.462906, lng: 139.330869},
+          position: location,
           map: map
         });
         var infowindow = new google.maps.InfoWindow({
           content: '東京工芸大学', 
-          position: {lat: 35.462906, lng: 139.330869},
+          position: location,
           pixelOffset: new google.maps.Size(0, -50)
         });
         infowindow.setMap(map);        
-      }
+      
       function changeMapType(type) {
         map.setMapTypeId(type);
+      });
       }else{
         alert(status);
       }
-        });
+      });
       }
     </script>
     
