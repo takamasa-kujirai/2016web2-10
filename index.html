@@ -11,6 +11,14 @@
   <body>
     <div id="map"></div>
     
+    <form>
+      <p>
+        <input type="button" value="ROADMAP" onclick="changeMapType('roadmap')">
+        <input type="button" value="SATELLITE" onclick="changeMapType('satellite')">
+        <input type="button" value="HYBRID" onclick="changeMapType('hybrid')">
+        <input type="button" value="TERRAIN" onclick="changeMapType('terrain')">
+      </p>
+    </form>
     
     <script type="text/javascript">
       var map;
@@ -20,6 +28,9 @@
           mapTypeId: google.maps.MapTypeId.HYBRID,
           zoom: 16
         });
+      }
+      function changeMap Type(type) {
+        map.setMapTypeId(type);
       }
     </script>
     
